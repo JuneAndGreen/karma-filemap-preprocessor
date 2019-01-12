@@ -7,7 +7,7 @@ const createFileMapPreprocessor = logger => {
 
   return (content, file, done) => {
     log.debug('Processing "%s".', file.originalPath);
-    done(`window.__FILE_MAP__ = window.__FILE_MAP__ || {};window.__FILE_MAP__[${file.originalPath}] = '${escapeContent(content)}'`);
+    done(`window.__FILE_MAP__ = window.__FILE_MAP__ || {};window.__FILE_MAP__['${file.originalPath}'] = '${escapeContent(content)}'`);
   };
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "karma-filemap-preprocessor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "karma preprocessor for create files map",
   "main": "index.js",
   "scripts": {
