@@ -1,6 +1,6 @@
 {
   "name": "karma-filemap-preprocessor",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "karma preprocessor for create files map",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/JuneAndGreen/karma-filemap-preprocessor/issues"
   },
-  "homepage": "https://github.com/JuneAndGreen/karma-filemap-preprocessor#readme"
+  "homepage": "https://github.com/JuneAndGreen/karma-filemap-preprocessor#readme",
+  "dependencies": {
+    "miniprogram-compiler": "latest"
+  }
 }
