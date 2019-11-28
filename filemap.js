@@ -25,7 +25,7 @@ const createFileMapPreprocessor = (logger, basePath) => {
     log.debug('Processing "%s".', file.originalPath)
 
     if (basePath && path.extname(file.originalPath) === '.wxml') {
-      const relativeWxmlPath = path.relative(basePath, file.originalPath)
+      const relativeWxmlPath = path.relative(basePath, file.originalPath).replace(/\\/ig, '/')
 
       done(`
         if (!window.$gwx) {
