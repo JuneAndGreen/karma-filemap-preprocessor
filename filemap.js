@@ -7,7 +7,7 @@ const escapeContent = content => {
   return content.replace(/\\/g, '\\\\').replace(/'/g, '\\\'').replace(/\r?\n/g, '\\n\' +\n    \'');
 };
 
-const createFileMapPreprocessor = (logger, basePath) => {
+const createFileMapPreprocessor = (logger, basePath, config) => {
   const log = logger.create('preprocessor.filemap')
 
   let compileString
@@ -16,7 +16,7 @@ const createFileMapPreprocessor = (logger, basePath) => {
       compileString = compilerResCache[basePath]
     } else {
       global.window = global.window || {}
-      compileString = compiler.wxmlToJs(basePath)
+      compileString = compiler.wxmlToJs(basePath, config)
       compilerResCache[basePath] = compileString
     }
   }
@@ -46,6 +46,6 @@ const createFileMapPreprocessor = (logger, basePath) => {
   }
 }
 
-createFileMapPreprocessor.$inject = ['logger', 'config.basePath']
+createFileMapPreprocessor.$inject = ['logger', 'config.basePath', 'config.fileMapPreprocessor']
 
 module.exports = createFileMapPreprocessor
